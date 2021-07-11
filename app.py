@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-from controllers.tasks_controller import tasks_blueprint
+from controllers.merchants_controller import merchants_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(tasks_blueprint)
+app.register_blueprint(merchants_blueprint)
 
 @app.route('/')
 def home():
