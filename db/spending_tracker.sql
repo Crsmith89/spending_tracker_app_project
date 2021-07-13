@@ -9,15 +9,15 @@ CREATE TABLE merchants (
 );
 
 CREATE TABLE tags (
-    id SERIAL PRIMARY
+    id SERIAL PRIMARY KEY,
     tag VARCHAR(255),
     description text
 );
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
-    id INT REFERENCES merchants(id),
+    merchant_id INT REFERENCES merchants(id),
     date VARCHAR(255),
-    amount INT
+    amount INT,
     tag_id INT REFERENCES tags(id)
 );

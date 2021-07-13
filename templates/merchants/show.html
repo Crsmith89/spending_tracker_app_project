@@ -1,19 +1,16 @@
 {% extends 'base.html' %}
+
 {% block content %}
     
-    <div>
-        <p>Name: {{merchant.name}}</p>
-        <p>Location: {{merchant.location}}</p>
-        <p>
-            {% if merchant.activated == True %}
-                Activated: Yes
-            {% else %}
-                Activated: No
-            {% endif %}
-        </p>
-        <a href="/merchants/{{merchant.id}}/edit">Edit</a>
-    </div>
+<header>
+    <h2>{{ merchant.name }}</h2>
+    <h3>{{ merchant.location }}</h3>
+    <form action="/merchants/{{ merchant.id }}/edit">
+    <input type="submit" value="Edit">
+    </form>
+    <p><a href="/merchants">Back to full list of Merchants</a></p>
+</header>
 
 
 
-{% endblock %}s
+{% endblock %}

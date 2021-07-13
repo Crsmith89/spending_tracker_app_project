@@ -1,21 +1,24 @@
-{{% extends 'base.html' %}}
+{% extends 'base.html' %}
 
 {% block content %}
 
-  <header>
+  <!-- <header>
       <h2>Merchants</h2>
       <a href="/merchants/new"><button>New Merchant</button></a>
-   </header>
+   </header> -->
 
 {% for merchant in merchants %}
 
- <main class="index_list">
-     <div>
-         <h3>{{ merchant.name }}</h3>
-     </div>
-     <div>
-         <form action="/merchants/{{merchants/{{ merchant.id }}/edit">
-           <input type="submit" value="Edit">
+<main class="index_list">
+    <div>
+        <h3>{{ merchant.name }}</h3>
+    </div>
+    <div>
+        <form action="/merchants/{{ merchant.id }}">
+            <input type="submit" value="Full details">
+        </form>
+        <form action="/merchants/{{ merchant.id }}/edit">
+            <input type="submit" value="Edit">
         </form>
      </div>
  </main>
