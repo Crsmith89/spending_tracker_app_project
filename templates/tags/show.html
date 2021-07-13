@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <header>
+        <h2>{{ tag.name }}</h2>
+        <p>{{ tag.description }}</p>
+        <form action="/tags/{{ tag.id }}/edit">
+            <input type="submit" value="Edit">
+        </form>
+        <p><a href="/tags">Return tags list</a></p>
+    </header>
+
+{% endblock %}

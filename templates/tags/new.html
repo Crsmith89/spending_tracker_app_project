@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>New Tag</h2>
+
+<form action="/tags" method="POST">
+    <div>
+        <label for="name"><sup>*</sup>Tag name:</label><br>
+        <input type="text" name="name" id="name" placeholder="e.g. Groceries" required><br><br>
+    </div>
+    <div>
+        <label for="description"><sup>*</sup>Description:</label><br>
+        <textarea name="description" id="description" cols="50" rows="4" placeholder="Description of Tag" required></textarea>
+    </div>
+    <p><sup>*</sup> Required.</p>
+    <input type="submit" value="Add Tag">
+</form>
+
+{% endblock %}

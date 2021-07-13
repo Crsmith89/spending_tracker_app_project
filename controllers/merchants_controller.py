@@ -16,7 +16,7 @@ def merchants():
 def merchant():
     return render_template("merchants/new.html")  
 
-# Create
+# Create - POST
 @merchants_blueprint.route("/merchants", methods=["POST"])
 def create_merchant():
     name = request.form["name"]
@@ -25,7 +25,7 @@ def create_merchant():
     merchant_repository.save(new_merchant)
     return redirect("/merchants")
 
-# show
+# show - get
 @merchants_blueprint.route("/merchants/<id>", methods=['GET'])
 def show_merchant(id):
     merchant = merchant_repository.select(id)
