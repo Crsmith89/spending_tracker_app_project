@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<header>
+    <h2>{{ transaction.name }}</h2>
+    <h3>{{ transaction.location }}</h3>
+    <form action="/transactions/{{ transaction.id }}/edit">
+    <input type="submit" value="Edit">
+    </form>
+    <p><a href="/transactions">Return transaction list</a></p>
+</header>
+
+
+
+{% endblock %}

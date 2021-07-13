@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit a Transaction</h2>
+
+<form action="/transactions/{{ transaction.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ transaction.name }}">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="{{ transaction.location }}">
+    </div>
+       </div>
+    <input type="submit" value="Update">
+    <form action="/transactions">
+        <input type="submit" value="Cancel">
+    </form>
+</form>
+
+{% endblock %}
