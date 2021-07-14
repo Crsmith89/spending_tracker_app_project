@@ -19,9 +19,9 @@ body > header {
     display: flex;
     align-items: right;
     justify-content: space-around;
-    background-color: #4a4d4d;
+    background-color: #848d8d00;
     padding: 0px 15px;
-    color: white;
+    color: rgb(40, 64, 201);
     
 }
 
@@ -42,3 +42,8 @@ li {
 }
 
 
+input[type=submit]:hover {
+    background-color: transparent;
+    color: rgb(99, 109, 238);
+    transition: 0.20s;
+}

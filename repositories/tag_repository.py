@@ -2,8 +2,6 @@ from db.run_sql import run_sql
 from models.tag import Tag
 from models.transaction import Transaction
 
-import repositories.merchant_repository as merchant_repository
-
 from db.run_sql import run_sql
 from models.tag import Tag
 from models.transaction import Transaction

@@ -5,6 +5,7 @@ from controllers.transactions_controller import transactions_blueprint
 
 import repositories.merchant_repository as merchant_repository
 import repositories.tag_repository as tag_repository
+import repositories.transaction_repository as transaction_repository
 
 app = Flask(__name__)
 app.register_blueprint(merchants_blueprint)
@@ -15,7 +16,8 @@ app.register_blueprint(transactions_blueprint)
 def home():
     merchants = merchant_repository.select_all()
     tags = tag_repository.select_all()
-    return render_template('index.html', merchants = merchants,tags = tags)
+    transactions = transaction_repository.select_all()
+    return render_template('index.html', merchants = merchants,tags = tags,transactions = transactions)
 
 if __name__ == '__main__':
     app.run(debug=True)

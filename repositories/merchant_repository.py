@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.merchant import Merchant
 from models.transaction import Transaction
+import repositories.tag_repository as tag_repository 
 
 # CRUD functions
 
@@ -41,5 +42,4 @@ def update(merchant):
     sql = "UPDATE merchants SET (name, location) = (%s, %s) WHERE id = %s"
     values = [merchant.name, merchant.location, merchant.id]
     run_sql(sql, values)
-
 
