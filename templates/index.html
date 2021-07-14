@@ -1,4 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-Index.html link UX to follow
+<header>
+        <section>
+            <h2>Power Pocket</h2>
+            <p>Welcome to Power Pocket spending tracker app. Keep track of purchases on the go!</p>
+    </header>
+    <main>
+        <div>
+            <h3>New Transaction</h3>
+            <h4>To add a new transaction please complete the following below. </h4>
+        </div>
+        <div>
+            <form action="/transactions" method="POST">
+            <label for="merchant"><sup>*</sup>New merchant:</label><br>
+            <input type="text" id="merchant" required>
+            
+            </select><br><br>
+            <label for="amount"><sup>*</sup>Amount Spent</label><br>
+            <input type="text" name="amount" id="amount" placeholder="£" required><br><br>
+            <label for="date"><sup>*</sup>Date of transaction</label><br>
+            <input type="date" name="date" id="date" required><br><br>
+            <label for="tag"><sup>*</sup>Transaction Tag</label><br>
+            <input type="text" name="tag" id="tag" required><br><br>
+            <p><sup>*</sup> Denotes required field.</p>
+            <input type="submit" value="Add Transaction">
+            <p>Merchants - e.g. Tesco, Amazon, Pub</p>
+            <p>Tags - e.g. Groceries, Entertainment, Food & Drink</p>
+            </form>
+        </div>
+    </main>
 {% endblock %}

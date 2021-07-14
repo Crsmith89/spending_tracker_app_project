@@ -1,3 +1,4 @@
+from controllers.transactions_controller import transactions
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from repositories import merchant_repository 
@@ -29,7 +30,8 @@ def create_merchant():
 @merchants_blueprint.route("/merchants/<id>", methods=['GET'])
 def show_merchant(id):
     merchant = merchant_repository.select(id)
-    return render_template("merchants/show.html, merchant = merchant")
+    transactions = merchant_repository.transactions(id)
+    return render_template("merchants/show.html", merchant = merchant, transactions = transactions)
 
 
 # edit

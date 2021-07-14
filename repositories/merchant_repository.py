@@ -25,7 +25,7 @@ def select(id):
     sql = "SELECT * FROM merchants WHERE ID = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    merchant = Merchant(result["name"], result["location"])
+    merchant = Merchant(result["name"], result["location"], result["id"])
     return merchant
 
 def delete_all():
